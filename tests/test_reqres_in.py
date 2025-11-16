@@ -19,7 +19,7 @@ def test_get_single_user():
 
 
 # POST + 201 + Валидация по schema
-def test_post_user():
+def test_create_new_user():
     response = requests.post(f"{URL}/users",
                              headers={"x-api-key": API_KEY},
                              json={"name": "morpheus", "job": "leader"})
@@ -30,7 +30,7 @@ def test_post_user():
 
 
 # PUT + Валидация по schema
-def test_put_user():
+def test_change_user():
     response = requests.put(f"{URL}/users/2",
                             headers={"x-api-key": API_KEY},
                             json={"name": "morpheus", "job": "zion resident"})
@@ -80,7 +80,7 @@ def test_bad_request_register():
 
 
 # Валидация названия цветов в Resources
-def test_validate_resources_list():
+def test_validate_resources_colour_names():
     response = requests.get(f"{URL}/unknown",
                             headers={"x-api-key": API_KEY})
     expected_values = {"cerulean", "fuchsia rose", "true red", "aqua sky", "tigerlily", "blue turquoise"}
