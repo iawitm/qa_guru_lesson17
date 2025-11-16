@@ -30,7 +30,7 @@ def test_post_user():
 
 
 # PUT + Валидация по schema
-def test_put_users():
+def test_put_user():
     response = requests.put(f"{URL}/users/2",
                             headers={"x-api-key": API_KEY},
                             json={"name": "morpheus", "job": "zion resident"})
